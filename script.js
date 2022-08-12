@@ -4,7 +4,7 @@ function calcAge(birthYear) {
   const age = 2022 - birthYear;
 
   function printAge() {
-    const output = `${firstName}, you are ${age}, born in ${birthYear}.`;
+    let output = `${firstName}, you are ${age}, born in ${birthYear}.`;
     console.log(output);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
@@ -18,7 +18,12 @@ function calcAge(birthYear) {
       function add(a, b) {
         return a + b;
       }
+
+      output = "NEW OUTPUT!"; //Here the output will be changed on the second callout because it is being re-defined//
+      /*  const output =
+        "NEW OUTPUT!"; here, this new definition will be ignored since JavaScript considers it a new variable that has nothing to do with the previous "output"*/
     }
+    console.log(output);
     console.log(millenial);
     //  console.log(add(5, 6)); ----> this will give an error as it is being called outside of scope
   }
