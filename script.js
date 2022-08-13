@@ -9,7 +9,7 @@ function calcAge(birthYear) {
 
     if (birthYear >= 1981 && birthYear <= 1996) {
       var millenial = true;
-      //What happens if we declare a variable that already exists?
+      //What happens if we declare a variable that already exists?//
       const firstName =
         "Nub"; /*Javascript always tries to look for the current "scope" to see if the variable is available. And since it is available, then it doesn't "look up" for other scopes to find that variable*/
       const str = `Oh, and you're a millenial, ${firstName}.`;
@@ -25,7 +25,7 @@ function calcAge(birthYear) {
     }
     console.log(output);
     console.log(millenial);
-    //  console.log(add(5, 6)); ----> this will give an error as it is being called outside of scope
+    //  console.log(add(5, 6)); ----> this will give an error as it is being called outside of scope//
   }
 
   printAge();
@@ -34,3 +34,13 @@ function calcAge(birthYear) {
 
 const firstName = "Jean";
 calcAge(1981);
+
+//Hoisting in Practice//
+
+console.log(me);
+console.log(job);
+console.log(year);
+
+var me = "Jean"; //undefined
+let job = "teacher"; //initiatialization due to TDZ//
+const year = 2000; //initializatation due to TDZ//
