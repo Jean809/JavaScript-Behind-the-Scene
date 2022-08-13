@@ -35,12 +35,30 @@ function calcAge(birthYear) {
 const firstName = "Jean";
 calcAge(1981);
 
-//Hoisting in Practice//
+//------------------------------------------------------------Hoisting and TDZ in Practice ----------------------------------------------------------------------//
 
 console.log(me);
-console.log(job);
-console.log(year);
+//console.log(job);
+//console.log(year);
 
 var me = "Jean"; //undefined
 let job = "teacher"; //initiatialization due to TDZ//
 const year = 2000; //initializatation due to TDZ//
+
+//functions
+
+console.log(addDeclaration(2, 2)); //goes through without a problem
+console.log(addExpression(2, 2)); //TypeError since expression function would be undefined(2,2) which is not a function which is error)
+console.log(arrowfunc(2, 2)); //initialization error due to TDZ (if we were to use "var" to create expression/arrow function then it would be undefined(2, 2) which is not a function which is error)
+
+function addDeclaration(a, b) {
+  return a + b;
+}
+
+var addExpression = function (a, b) {
+  return a + b;
+};
+
+const arrowfunc = (a, b) => a + b;
+
+// Other examples//
