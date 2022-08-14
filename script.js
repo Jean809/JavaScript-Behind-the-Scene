@@ -62,3 +62,14 @@ var addExpression = function (a, b) {
 const arrowfunc = (a, b) => a + b;
 
 // Other examples//
+
+if (!numProducts) {
+  //the shoppingcart function will run because numProducts is undefined as numProducts is hoisted
+  deleteShoppingCart();
+}
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log("All products deleted!");
+}
