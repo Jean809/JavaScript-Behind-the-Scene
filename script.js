@@ -1,4 +1,5 @@
 "use strict";
+/*
 
 function calcAge(birthYear) {
   const age = 2022 - birthYear;
@@ -11,7 +12,7 @@ function calcAge(birthYear) {
       var millenial = true;
       //What happens if we declare a variable that already exists?//
       const firstName =
-        "Nub"; /*Javascript always tries to look for the current "scope" to see if the variable is available. And since it is available, then it doesn't "look up" for other scopes to find that variable*/
+        "Nub"; //Javascript always tries to look for the current "scope" to see if the variable is available. And since it is available, then it doesn't "look up" for other scopes to find that variable/
       const str = `Oh, and you're a millenial, ${firstName}.`;
       console.log(str);
 
@@ -22,7 +23,8 @@ function calcAge(birthYear) {
       output = "NEW OUTPUT!"; //Here the output will be changed on the second callout because it is being re-defined//
       /*  const output =
         "NEW OUTPUT!"; here, this new definition will be ignored since JavaScript considers it a new variable that has nothing to do with the previous "output"*/
-    }
+/*
+      }
     console.log(output);
     console.log(millenial);
     //  console.log(add(5, 6)); ----> this will give an error as it is being called outside of scope//
@@ -35,8 +37,11 @@ function calcAge(birthYear) {
 const firstName = "Jean";
 calcAge(1981);
 
+*/
+
 //------------------------------------------------------------Hoisting and TDZ in Practice ----------------------------------------------------------------------//
 
+/*
 console.log(me);
 //console.log(job);
 //console.log(year);
@@ -73,3 +78,24 @@ var numProducts = 10;
 function deleteShoppingCart() {
   console.log("All products deleted!");
 }
+*/
+
+// --------------------------------------------------------- .this Keyword in Practice --------------------------------------------------------------------------------//
+
+console.log(this); //this will display the global object of windows
+
+function calcAge(birthYear) {
+  console.log(2022 - birthYear);
+  console.log(this); //The reason we get undefined is because in the windows object, "this" is an empty value so it is classified as "undefined" over here
+}
+
+calcAge(2000);
+
+//What happens if this were to be an arrow function? ----------->
+
+const calcAgeArrow = (birthYear) => {
+  console.log(2022 - birthYear);
+  console.log(this); //the reason this prints the same as "this" of outside function is because arrow functions have use "this" of their parent func. In this case parent is the the object Windows
+};
+
+calcAgeArrow(2000);
