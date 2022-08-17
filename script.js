@@ -82,6 +82,7 @@ function deleteShoppingCart() {
 
 // --------------------------------------------------------- .this Keyword in Practice --------------------------------------------------------------------------------//
 
+/*
 console.log(this); //this will display the global object of windows
 
 function calcAge(birthYear) {
@@ -109,3 +110,45 @@ const jean = {
 };
 
 jean.calcAge();
+
+const nub = {
+  year: 1998,
+};
+
+nub.calcAge = jean.calcAge;
+
+nub.calcAge();
+*/
+
+// ------------------------------------------------------------arrow functions vs regular functions ----------------------------------------------------------------------//
+
+const jean = {
+  firstName: "jean",
+  year: 2000,
+  calcAge: function () {
+    console.log(this);
+    console.log(2022 - this.year);
+  },
+
+  greet: () => {
+    console.log(
+      `Hey, my name is ${this.firstName} and I'm ${this.calcAge} years old` //it will print "undefined" for first name and age. This example "undefined" will only happen with an arrow function.
+    );
+  },
+};
+
+jean.calcAge();
+jean.greet();
+
+//Now, if we were to use a regular function the first name and age will go through.
+
+// ----------------------------------------------------------Arguments Keyword----------------------------------------------------------------------
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+//We cannot do this with arrows though!
