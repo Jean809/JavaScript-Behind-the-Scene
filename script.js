@@ -121,7 +121,7 @@ nub.calcAge();
 */
 
 // ------------------------------------------------------------arrow functions vs regular functions ----------------------------------------------------------------------//
-
+/*
 const jean = {
   firstName: "jean",
   year: 2000,
@@ -142,8 +142,11 @@ jean.greet();
 
 //Now, if we were to use a regular function the first name and age will go through.
 
+*/
+
 // ----------------------------------------------------------Arguments Keyword----------------------------------------------------------------------
 
+/*
 const addExpr = function (a, b) {
   console.log(arguments);
   return a + b;
@@ -152,3 +155,31 @@ addExpr(2, 5);
 addExpr(2, 5, 8, 12);
 
 //We cannot do this with arrows though!
+
+*/
+
+// ---------------------------------------------------- Primitives vs Reference Types ------------------------------------------------------------------
+
+//Primitive types
+let lastName = "Cacon";
+let oldLastName = lastName;
+lastName = "Macaco";
+
+console.log(lastName, oldLastName);
+
+//Reference types
+
+const jessica = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+};
+
+const marriedJessica = jessica;
+
+marriedJessica.lastName = "Davis";
+console.log("Before marriafe:", jessica);
+console.log("After marriage:", marriedJessica);
+
+/*Both "before" and "after" marriage will print the same value, because unlike primitive types
+when you change the value of an object it replaces the value of the entire object instead of creating a new address like primitive types*/
